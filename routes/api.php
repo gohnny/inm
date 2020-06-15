@@ -13,7 +13,26 @@ use Illuminate\Support\Facades\Route;
 | is assigned the "api" middleware group. Enjoy building your API!
 |
 */
-
+//
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
+});
+
+Route::group(['namespace' => 'API'], function () {
+    Route::group(['namespace' => 'Auth'], function () {
+        Route::post('register', 'RegisterController');
+        Route::post('login', 'LoginController');
+        Route::post('logout', 'LogoutController')->middleware('auth:api');
+    });
+
+//    Route::group([
+//        'namespace' => 'Auth',
+//        'middleware' => 'api',
+//        'prefix' => 'password'
+//    ], function () {
+//        Route::post('create', 'PasswordResetController@create');
+//        Route::get('find/{token}', 'PasswordResetController@find');
+//        Route::post('reset', 'PasswordResetController@reset');
+//    });
+
 });
