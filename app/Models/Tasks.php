@@ -17,5 +17,6 @@ class Tasks extends Model
         'assign_user_id',
     ];
 
+    public $timestamps = true;
 
 }

@@ -1,0 +1,157 @@
+{
+	"info": {
+		"_postman_id": "c9695589-3630-4292-8975-9a5a581e16e0",
+		"name": "inm",
+		"description": "inm collection",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Register",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"first_name\": \"dsgfdsfsd\",\n    \"last_name\": \"sdfdsfdsf\",\n    \"email\": \"gmail@gmail.com\",\n    \"password\": \"123456789w\",\n    \"password_confirmation\": \"123456789w\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:9102/api/register",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "9102",
+					"path": [
+						"api",
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Login Copy",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"email\": \"gmail@gmail.com\",\n    \"password\": \"123456789w\"\n\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:9102/api/login",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "9102",
+					"path": [
+						"api",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Logout",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiNzM3M2FkOGY2NDM2MGRkZjUyYmFmMjM4ZTM0YWY1ZDk3ZDBmYWVhNmVlMGI3OTM1M2JmOTQ2Y2E3NjJkOGEzOTU2NmZmZWM2Nzc5ZmFjYWYiLCJpYXQiOjE1OTIyNTQ0MzEsIm5iZiI6MTU5MjI1NDQzMSwiZXhwIjoxNjIzNzkwNDMxLCJzdWIiOiIxOCIsInNjb3BlcyI6W119.uEgOlaScXyqFiJXMlHPQnMh7ejxBc5kGbiZasZg0yASL2PPkqyagdvAV4Wp9N6FOdj_PFEDRfd-bnvsDVWDMcXBaDomNeik27Y_zGI0juqkYtWiVrZVEVgeoUjwSBo7npybpPwUyitGnvF-uEPKNj4n6iBqOFWPtSpAhmGNi-w4GxvdGcAOEPmUMeif7eBvkbNfaB8-jhwbX4Q2g69p8gentf-L28yEoi0gaBSHaSyy8prUXjYCmIFnTjEc9bUR0W7MG3YdoVbZ6kibONHi8jgq2sXqn6--bdsJ_4_Fup0g3aeBDvL_NLmIwJKbAqmazNTz-gOil4DTHH-8Yh6yi0e1vnSXU3UaZb3jNL4SPyAg6BUIJkr9dKVrMXKI7DVjvcD2cPqoYme2SRCW6Z7v6D3lhUhYPqtg4DXu7s8ZkuVdJ6USFZBvDjyt_Rh1W1kWDKmX179IrD5S6kSrm40DAb87R-5gTnyADwE5680uIdgVTb-jIwWZz899CICPLzQGZw8lZqkq4_b_3GGk0yCfbqgD9Y8ygHg4OO3TodwvzsiImrcchzXyYyWjZ776zekEt5YjlgOQ57SSTGmd0gUyQ8NqGKiJB1JDMuGvmKz5VfEXgYjdcyuXRonc3zbUXph7dKLrPtH9XjFxjSJ7c7QkWbldSL4Gq7LUVaOh6DgULSf8",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "'Bearer '.$accessToken,",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"url": {
+					"raw": "http://127.0.0.1:9102/api/logout",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "9102",
+					"path": [
+						"api",
+						"logout"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"id": "0cd3d89a-99b0-4a32-b4d3-41d2ef58bd6b",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"id": "f4ea734c-cba9-4f42-b639-abe38ab91a8e",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"protocolProfileBehavior": {}
+}

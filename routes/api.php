@@ -23,6 +23,7 @@ Route::group(['namespace' => 'API'], function () {
         Route::post('register', 'RegisterController');
         Route::post('login', 'LoginController');
         Route::post('logout', 'LogoutController')->middleware('auth:api');
+       // Route::post('', 'LogoutController')->middleware('auth:api');
     });
 
 //    Route::group([
