@@ -19,21 +19,18 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 });
 
 Route::group(['namespace' => 'API'], function () {
+    Route::resource('tasks', 'TaskController')->middleware('auth:api')
+        ->only(['show','destroy','edit','update','index']);
+
+    Route::resource('users', 'UserController')
+        ->middleware('auth:api')
+        ->only(['show','destroy','edit','update','index']);
+
     Route::group(['namespace' => 'Auth'], function () {
         Route::post('register', 'RegisterController');
         Route::post('login', 'LoginController');
         Route::post('logout', 'LogoutController')->middleware('auth:api');
-       // Route::post('', 'LogoutController')->middleware('auth:api');
-    });
 
-//    Route::group([
-//        'namespace' => 'Auth',
-//        'middleware' => 'api',
-//        'prefix' => 'password'
-//    ], function () {
-//        Route::post('create', 'PasswordResetController@create');
-//        Route::get('find/{token}', 'PasswordResetController@find');
-//        Route::post('reset', 'PasswordResetController@reset');
-//    });
+    });
 
 });
