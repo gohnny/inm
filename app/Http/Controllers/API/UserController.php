@@ -59,7 +59,7 @@ class UserController extends BaseController
         }
 
         $input = $request->all();
-       // return $input;
+
         $validator = Validator::make($input, [
             'first_name' => 'required|min:4|max:15',
             'last_name' => 'required',

@@ -14,4 +14,9 @@ class Status extends Model
     protected $fillable = [
         'status',
     ];
+
+    public function statusId()
+    {
+        return $this->belongsTo(Tasks::class, 'status_id', 'id');
+    }
 }

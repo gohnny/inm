@@ -2,6 +2,7 @@
 
 namespace App;
 
+use App\Models\Tasks;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
@@ -45,4 +46,15 @@ class User extends Authenticatable
     ];
 
     public $timestamps = true;
+
+    public function tasks()
+    {
+        return $this->belongsTo(Tasks::class, 'created_by_user_id', 'user_id');
+    }
+
+    public function assignedTask()
+    {
+        return $this->belongsTo(Tasks::class, 'assign_user_id', 'user_id');
+    }
+
 }

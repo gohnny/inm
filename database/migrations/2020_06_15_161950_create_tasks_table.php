@@ -19,7 +19,7 @@ class CreateTasksTable extends Migration
             $table->text('description');
             $table->tinyInteger('status_id');
             $table->unsignedBigInteger('created_by_user_id');
-            $table->unsignedBigInteger('assign_user_id');
+            $table->unsignedBigInteger('assign_user_id')->nullable();
             $table->timestamps();
         });
     }

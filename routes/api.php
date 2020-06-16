@@ -19,12 +19,13 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 });
 
 Route::group(['namespace' => 'API'], function () {
-    Route::resource('tasks', 'TaskController')->middleware('auth:api')
-        ->only(['show','destroy','edit','update','index']);
+
 
     Route::resource('users', 'UserController')
         ->middleware('auth:api')
         ->only(['show','destroy','edit','update','index']);
+
+    Route::resource('tasks', 'TaskController')->middleware('auth:api');
 
     Route::group(['namespace' => 'Auth'], function () {
         Route::post('register', 'RegisterController');
