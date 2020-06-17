@@ -2,39 +2,21 @@
 
 namespace App\Http\Controllers\API;
 
-use App\Http\Controllers\Controller;
 use App\Models\Tasks;
+use App\User;
+use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Validator;
 
 class TaskController extends BaseController
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\JsonResponse
-     */
-    public function index()
-    {
-        $filterByStatus = Tasks::whereHas('status',function ($query){
-            $query->where('status.status','=','View');
-            })->with('status')
-            ->get();//три возможных статуса: ["View", "In Progress", "Done"]
-
-//        $orderByUser = Tasks::with(['createByUser' => function ($q) {
-//            $q->orderBy('created_at', 'asc/desc');
-//        }])->get();// Отсортировав по новым/старым пользователям
-
-        return $this->sendResponse($filterByStatus->toArray(),'Users list get success');
-    }
-
 
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\JsonResponse
+     * @param Request $request
+     * @return JsonResponse
      */
     public function store(Request $request)
     {
@@ -44,7 +26,7 @@ class TaskController extends BaseController
             'description' => 'required',
             'status_id' => 'required|in:1,2,3'
         ]);
-        if($validator->fails()){
+        if ($validator->fails()) {
             return $this->sendError('Validation Error.', $validator->errors());
         }
         $input["created_by_user_id"] = Auth::id();
@@ -53,44 +35,49 @@ class TaskController extends BaseController
     }
 
     /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
-        //
-    }
-
-    /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $id
-     * @return \Illuminate\Http\JsonResponse
+     * @param int $id
+     * @return JsonResponse
      */
     public function changeStatus(Request $request, $id)
     {
         $task = Tasks::findOrFail($id);
-
-        if (is_null($task)){
+        if (is_null($task)) {
             return $this->sendError('Not found');
         }
-
         $input = $request->all();
-
-
         $validator = Validator::make($input, [
             'status_id' => 'required|in:1,2,3'
         ]);
-
-
-        if($validator->fails()){
+        if ($validator->fails()) {
             return $this->sendError('Validation Error.', $validator->errors());
         }
-
         $task->status_id = $input['status_id'];
+        $task->save();
+        return $this->sendResponse($task->toArray(), 'Task  status updated successfully.');
+    }
 
+    /**
+     * @param Request $request
+     * @param $id
+     * @return JsonResponse
+     */
+    public function changeAssignUser(Request $request, $id)
+    {
+        $task = Tasks::findOrFail($id);
+        if (is_null($task)) {
+            return $this->sendError('Not found');
+        }
+        $input = $request->all();
+        $usersId = User::all()->except(Auth::id())->pluck('user_id');
+        $validator = Validator::make($input, [
+            'assign_user_id' => 'required|in:' . $usersId->implode(',')
+        ]);
+        if ($validator->fails()) {
+            return $this->sendError('Validation Error.', $validator->errors());
+        }
+        $task->assign_user_id = $input['assign_user_id'];
         $task->save();
         return $this->sendResponse($task->toArray(), 'Task  status updated successfully.');
     }
@@ -98,15 +85,15 @@ class TaskController extends BaseController
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\JsonResponse
+     * @param Request $request
+     * @param int $id
+     * @return JsonResponse
      */
     public function update(Request $request, $id)
     {
         $task = Tasks::findOrFail($id);
 
-        if (is_null($task)){
+        if (is_null($task)) {
             return $this->sendError('Not found');
         }
 
@@ -118,9 +105,7 @@ class TaskController extends BaseController
             'status_id' => 'required|in:1,2,3'
         ]);
         $input["created_by_user_id"] = Auth::id();
-       // return $input;
-
-        if($validator->fails()){
+        if ($validator->fails()) {
             return $this->sendError('Validation Error.', $validator->errors());
         }
         $task->title = $input['title'];
@@ -133,15 +118,56 @@ class TaskController extends BaseController
 
     /**
      * Remove the specified resource from storage.
-     *
      * @param Tasks $task
-     * @return \Illuminate\Http\JsonResponse
-     * @throws \Exception
+     * @return JsonResponse
+     *
      */
-    public function destroy(Tasks $task): \Illuminate\Http\JsonResponse
+    public function destroy(Tasks $task): JsonResponse
     {
         $task->delete();
 
-        return $this->sendResponse($task->toArray(),'Task deleted');
+        return $this->sendResponse($task->toArray(), 'Task deleted');
     }
+
+    /**
+     * @param Request $request
+     * @return JsonResponse
+     */
+    public function filter(Request $request)
+    {
+        $input = $request->all();
+        $validator = Validator::make($input, [
+            'status_id' => 'required|in:1,2,3'
+        ]);
+        if ($validator->fails()) {
+            return $this->sendError('Validation Error value must be 1/2/3 ', $validator->errors());
+        }
+        $status_id = $input['status_id'];
+        $filterByStatus = Tasks::where('status_id', '=', "$status_id")->with('status')->get();
+
+        return $this->sendResponse($filterByStatus->toArray(), 'Task filtered by ""');
+    }
+
+    /**
+     * @param Request $request
+     * @return JsonResponse
+     */
+    public function order(Request $request)
+    {
+        $input = $request->all();
+        $validator = Validator::make($input, [
+            'order' => 'required|in:asc,desc'
+        ]);
+        if ($validator->fails()) {
+            return $this->sendError('Validation Error value must be asc|desc', $validator->errors());
+        }
+        $order = $input['order'];
+        $orderByUser = Tasks::with(['createByUser' => function ($q) use ($order) {
+            $q->orderBy('created_at', "$order");
+        }])->get();
+
+        return $this->sendResponse($orderByUser->toArray(), 'Task filtered by ""');
+    }
+
+
 }

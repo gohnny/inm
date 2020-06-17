@@ -22,10 +22,14 @@ Route::group(['namespace' => 'API'], function () {
 
     Route::resource('users', 'UserController')
         ->middleware('auth:api')
-        ->only(['show','destroy','edit','update','index']);
+        ->only(['show', 'destroy', 'edit', 'update', 'index']);
 
-    Route::resource('tasks', 'TaskController')->middleware('auth:api');
+    Route::resource('tasks', 'TaskController')->middleware('auth:api')
+        ->only(['destroy', 'store', 'update', 'index']);
     Route::put('tasks/{task}/status', 'TaskController@changeStatus')->middleware('auth:api');
+    Route::put('tasks/{task}/assign_user', 'TaskController@changeAssignUser')->middleware('auth:api');
+    Route::get('tasks/filter{filter?}', 'TaskController@filter')->middleware('auth:api');
+    Route::get('tasks/order{order?}', 'TaskController@order')->middleware('auth:api');
 
     Route::group(['namespace' => 'Auth'], function () {
         Route::post('register', 'RegisterController');
