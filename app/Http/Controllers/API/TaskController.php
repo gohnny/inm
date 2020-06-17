@@ -17,9 +17,16 @@ class TaskController extends BaseController
      */
     public function index()
     {
-        $tasks = Tasks::with(['createByUser','status']);
+        $filterByStatus = Tasks::whereHas('status',function ($query){
+            $query->where('status.status','=','View');
+            })->with('status')
+            ->get();//три возможных статуса: ["View", "In Progress", "Done"]
 
-        return $this->sendResponse($tasks->toArray(),'Users list get success');
+//        $orderByUser = Tasks::with(['createByUser' => function ($q) {
+//            $q->orderBy('created_at', 'asc/desc');
+//        }])->get();// Отсортировав по новым/старым пользователям
+
+        return $this->sendResponse($filterByStatus->toArray(),'Users list get success');
     }
 
 
@@ -60,11 +67,32 @@ class TaskController extends BaseController
      * Show the form for editing the specified resource.
      *
      * @param  int  $id
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Http\JsonResponse
      */
-    public function edit($id)
+    public function changeStatus(Request $request, $id)
     {
-        //
+        $task = Tasks::findOrFail($id);
+
+        if (is_null($task)){
+            return $this->sendError('Not found');
+        }
+
+        $input = $request->all();
+
+
+        $validator = Validator::make($input, [
+            'status_id' => 'required|in:1,2,3'
+        ]);
+
+
+        if($validator->fails()){
+            return $this->sendError('Validation Error.', $validator->errors());
+        }
+
+        $task->status_id = $input['status_id'];
+
+        $task->save();
+        return $this->sendResponse($task->toArray(), 'Task  status updated successfully.');
     }
 
     /**

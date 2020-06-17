@@ -93,7 +93,7 @@
 					"bearer": [
 						{
 							"key": "token",
-							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiNzM3M2FkOGY2NDM2MGRkZjUyYmFmMjM4ZTM0YWY1ZDk3ZDBmYWVhNmVlMGI3OTM1M2JmOTQ2Y2E3NjJkOGEzOTU2NmZmZWM2Nzc5ZmFjYWYiLCJpYXQiOjE1OTIyNTQ0MzEsIm5iZiI6MTU5MjI1NDQzMSwiZXhwIjoxNjIzNzkwNDMxLCJzdWIiOiIxOCIsInNjb3BlcyI6W119.uEgOlaScXyqFiJXMlHPQnMh7ejxBc5kGbiZasZg0yASL2PPkqyagdvAV4Wp9N6FOdj_PFEDRfd-bnvsDVWDMcXBaDomNeik27Y_zGI0juqkYtWiVrZVEVgeoUjwSBo7npybpPwUyitGnvF-uEPKNj4n6iBqOFWPtSpAhmGNi-w4GxvdGcAOEPmUMeif7eBvkbNfaB8-jhwbX4Q2g69p8gentf-L28yEoi0gaBSHaSyy8prUXjYCmIFnTjEc9bUR0W7MG3YdoVbZ6kibONHi8jgq2sXqn6--bdsJ_4_Fup0g3aeBDvL_NLmIwJKbAqmazNTz-gOil4DTHH-8Yh6yi0e1vnSXU3UaZb3jNL4SPyAg6BUIJkr9dKVrMXKI7DVjvcD2cPqoYme2SRCW6Z7v6D3lhUhYPqtg4DXu7s8ZkuVdJ6USFZBvDjyt_Rh1W1kWDKmX179IrD5S6kSrm40DAb87R-5gTnyADwE5680uIdgVTb-jIwWZz899CICPLzQGZw8lZqkq4_b_3GGk0yCfbqgD9Y8ygHg4OO3TodwvzsiImrcchzXyYyWjZ776zekEt5YjlgOQ57SSTGmd0gUyQ8NqGKiJB1JDMuGvmKz5VfEXgYjdcyuXRonc3zbUXph7dKLrPtH9XjFxjSJ7c7QkWbldSL4Gq7LUVaOh6DgULSf8",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiMjM4OTI2NjAwNzU4ODJmMjg5ZTgyMDljNDQ0NzFlODZmMDQ1NTFmNmFlYTk5YTAzMmZiZjg4MWZiMGE4ODE0ZjhjMDQ2MWU5ZjBkNmI0NmUiLCJpYXQiOjE1OTIzMTQ1NDEsIm5iZiI6MTU5MjMxNDU0MSwiZXhwIjoxNjIzODUwNTQxLCJzdWIiOiIxOCIsInNjb3BlcyI6W119.01vt_UMJEV311PxUT2V7Cjh9jPAhv9a3IwXL50KyaX5MmXPl2qGCns1YDozrYttXiSZObKGI8Ny9qkGOvLypMBqfHXPXaRAGhTIg6QwxM0GYxERrGH6G9kKOqSF6Guki2Nfx0VpNmSBfHy-LIMKhDeJODpequ42oqz0RwKlWy04atTKoZ1CfkM-mNOAymjhxlsmc3Qo3BFBF-UVh3pTPLKi1ltvXCHd4NUM9wuMwORgEOypSAiiz1zfweIGmg6UDHg2nG02N3Pbg1oovrralWcQWVTlPRI16qbETaDm_Blkj63XqgOcAzltaNbh0dld3ZI324yiQCIK6UQ47nEH3tD4cAvvhRCsdDY-0PnNQclgcpn6LrsMbUAWoo8bXOAfd4BBt-CvtQL66b9k2ZvQqdbMqVyVE_uZeseqME2dxHh5Q7WP2brUiLH0xY5wLB0EN-TtXN-X2p3eGVh9HwbNbtJdcZnQMtmIeYmrPp5MYAcgjuSmPYuWJDw5hcE26sY_0jxv5Qu6io7_24E00O_6j43AJt-68aK7maWa2KqWH66EvZpman4WfmUBta9-A5a-K4qB7vlDeYr7HZNC51u7SZkp-uFJIEXMsA1Y4Tlb5fXQybNmvpbED2uuuM-bBeXzgS1slqz5YuCUDJ2qr107W9ysYu9u3fnWqpPxy5nTEBKw",
 							"type": "string"
 						}
 					]
@@ -127,6 +127,492 @@
 						"logout"
 					]
 				}
+			},
+			"response": []
+		},
+		{
+			"name": "UserUpdate",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiMzI4YWIxZWU3ZTE5YzlmNTc4ZmYwZjU5OTlhODM2MTY3N2RlNzk0MmU1MDE4NmI2NDM1YzI1ZDJhMjlmYjMxZWYxNDYxYWE5MGYxNjdjYTAiLCJpYXQiOjE1OTIzMTU0NTMsIm5iZiI6MTU5MjMxNTQ1MywiZXhwIjoxNjIzODUxNDUzLCJzdWIiOiIxOCIsInNjb3BlcyI6W119.BCAoKTcqOwGT8joN0-UDR7oT63Axph-b2pXCozYQwDmXsszNuHIKd5ez6An2nY2XP7Aw4cFzMxyXaDAeVAj1B6aGvkcghqfz2w28ajCPnxRHd5JlmA0dju88_VqnGndq0uJS5kheaDwSawvi1GwQe9lySeX441UxI7TT7W1B5WCpBzqaDSz7_fvbKZ8b2QaXV2OCCHlJn4UVGjrWOwkxIl19H7mRg_2ZQvofDamdZxADGYtIbXSB4F7m2n9eS961Vk9IkL5m9KzQjEa4_cxqnEr5Cj-FZ7mngKpRdwKfPrOhRdtX6HEKdzS_HYsLPqvnpxpUra1M1byHlGZ_CQy1thWv23E2Rpg5cQKGk-UDgQTRWdRmKZ4sabhbA7a5RDjvyuPvBJFgU23fihbRDu9lVLvIZc4sqCxpMN8dfzABoHjNdp9TcAXcCRMmRw-5y5M_x_0QTlGgFhap7upUIEpVrmCMUXSQtDln6ZsN-0tqggsuKkG3ZmMneECaZpLca3EKzTSZWE3KTbUCf5YrtY-oguH7YZNYeSYYj_ftVuSwWSy9C_D6KtC6jSLqo7b5YsA6kFrJwKOhy8ZoHwhEsv7PAnEUw3OVvzC_ebMhJzdHnKdhkYPwJFrtSiUDXsOjmjo2Nn6lC5M1sZmlrU0B0_HgPN3uqDo1B_wRVBlV6on95IY",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Accept",
+						"type": "text",
+						"value": "application/json"
+					},
+					{
+						"key": "",
+						"type": "text",
+						"value": "",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"first_name\": \"lrst\",\n  \"last_name\": \"Last\",\n  \"email\": \"example@gmail.com\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:9102/api/users/5",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "9102",
+					"path": [
+						"api",
+						"users",
+						"5"
+					]
+				},
+				"description": "Обновление данных юзера"
+			},
+			"response": []
+		},
+		{
+			"name": "TaskUpdate",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiZTRjMjE4OTc5MjZhNzAzZmNkZjhiMjllNGJmYjBjZDA1YmFmM2IxODVlMTA3NTliNjU3YjBlYzZlNzFjMjU1NDUzNTEyYjBjYTVjMDUzNTAiLCJpYXQiOjE1OTIzMjgxNjMsIm5iZiI6MTU5MjMyODE2MywiZXhwIjoxNjIzODY0MTYzLCJzdWIiOiIxNiIsInNjb3BlcyI6W119.g0IomBBrZR2tAA5J_mcC0efMk9K_OB6iRQi_HOLnK1ffHLC4cjVVGbqMjBxdoZnSZKAjAovS0-4cez71CBZKDc7XSehYcRkixfkrgzn4JoiixGog8ELZ7TVk7Gcl0mk4AjXrCqpwaerCUr07cQ7NlTbcZ6hGWAyryVrz1REgiqw0mEqDzi7eR6bXTpTe7257N7RuAxNQiZAvK4NZi8s3mz2ETLFeL0pTsckYOO48azmlLSnMOfu0Ue6AiT25zCSCmQAEau0cCyML-Gj5fdZ8hEMyuKx0VcH_hXCOl9Vh-zf1aIGPDHyopzS7zcd1t1XC69be6RqtyDDfTl1cGtuJu-LhS37t8IGdMQRBxLOxLKwBdRe65c-VtpW-9cfVWwge3Nz6Ua2L9RfeyYF3_H6xzN6DR47EpvEjlmaMG6TSPqBYmHvReXheZwGS7Mi6VDFkwI-488nTm2N4lz8dKPFga_-7MdbmBoxz85kKgqhGT_pKXoyGfeQGgIKiTZBR_AXqxKtS5C4rhC_Py1_DRD4QcaaIXuu-VFEVR5n7Og9MPq8y96mwvOtjP472IeBvQqZTyL9r1ICfTfE0Ic4AciEl5y10-doeRRpcpCrl0lDvmcqGOD04mbe3Ktju_8iyPd4gIhF-YXkNE-hGK8XjeTMCx3s58BlipIIpLeFem8dx9NY",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Accept",
+						"type": "text",
+						"value": "application/json"
+					},
+					{
+						"key": "",
+						"type": "text",
+						"value": "",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"title\": \"sadeawsdasdasdas\",\n  \"description\": \"dsadasdasdasdasdas\",\n  \"status_id\": \"2\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:9102/api/tasks/5",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "9102",
+					"path": [
+						"api",
+						"tasks",
+						"5"
+					]
+				},
+				"description": "Обновление данных юзера"
+			},
+			"response": []
+		},
+		{
+			"name": "GetUser",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiZTZmZmZhMmY0NjVkZmFjYjI1YjZmMDVhYWQ4OGMyYWQzYmI4MDMxM2I5NGJiNWI2NzQ0Y2UwMDgxNjI4YWJhYjFkYWUzNDkwMjEwY2QwMzQiLCJpYXQiOjE1OTIzMTgxMTgsIm5iZiI6MTU5MjMxODExOCwiZXhwIjoxNjIzODU0MTE4LCJzdWIiOiIxOCIsInNjb3BlcyI6W119.xOwjBWwcrDmRy7P4wcYS2LRJCRMXZZrWhw-79qfIlNHKBF9bYrO7jDcw2suXYNt8k85QQ_ypuKanPWTlpW4WHkaX3t7bHkCzarNg88n5oqUprgVxjnFQAnyPjwc173O-pk7qXzUwc7E0H7ngN-PpQl4WJhEmy0_L6Y4Jc6TFffsfgggMAYPAVWS9N2tXyfykwNXdKVwM0xa7ix80a0DIOWfgIQF5o_1qE5JnytvmcknOESEDQgXfkoMRzHjgC7d5YHkrpCtXnBIUsvbQhCmhdFAeE47OAKKScH_o_ohwovTXZfO5uC--myVd_WknW2UsDpRzLoLh-cpr9ws-_Yq1EfZYPbhVjPjLpm9Ek3wZqPj8rh38YkBYnQjMafDIEI1_V62TB3FW_nTtGa1GTev2SVXm-jILrv6QClzZDAL5DgzkJgPDRGm08OUL_Gz_7AwRrI7d5OjdbnlJO9-iHll0t5KAgy89v-9YezJeoIQ_btR6NFl1AoIl2mPKXvRlVNahE9x9yF3D0OGbojuanbXDoSlTq6C5Qt6wk6G-GUnPgUCiRaQ6QAWvH2wivF_WKEXA8kCiMUOzeR-GTzu_s-oLlYo1eLhiaB7z7ffWZ3XTxO6ZpI1Snl1VyNnu37m1zfRhiGAjNHSIEvjEwTxVDkJcj94MaBSswjtKLk3FflZgEbI",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"type": "text",
+						"value": "application/json"
+					},
+					{
+						"key": "Authorization",
+						"type": "text",
+						"value": "'Bearer '.$accessToken,",
+						"disabled": true
+					}
+				],
+				"url": {
+					"raw": "http://127.0.0.1:9102/api/users/2",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "9102",
+					"path": [
+						"api",
+						"users",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DeleteUser",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiZTZmZmZhMmY0NjVkZmFjYjI1YjZmMDVhYWQ4OGMyYWQzYmI4MDMxM2I5NGJiNWI2NzQ0Y2UwMDgxNjI4YWJhYjFkYWUzNDkwMjEwY2QwMzQiLCJpYXQiOjE1OTIzMTgxMTgsIm5iZiI6MTU5MjMxODExOCwiZXhwIjoxNjIzODU0MTE4LCJzdWIiOiIxOCIsInNjb3BlcyI6W119.xOwjBWwcrDmRy7P4wcYS2LRJCRMXZZrWhw-79qfIlNHKBF9bYrO7jDcw2suXYNt8k85QQ_ypuKanPWTlpW4WHkaX3t7bHkCzarNg88n5oqUprgVxjnFQAnyPjwc173O-pk7qXzUwc7E0H7ngN-PpQl4WJhEmy0_L6Y4Jc6TFffsfgggMAYPAVWS9N2tXyfykwNXdKVwM0xa7ix80a0DIOWfgIQF5o_1qE5JnytvmcknOESEDQgXfkoMRzHjgC7d5YHkrpCtXnBIUsvbQhCmhdFAeE47OAKKScH_o_ohwovTXZfO5uC--myVd_WknW2UsDpRzLoLh-cpr9ws-_Yq1EfZYPbhVjPjLpm9Ek3wZqPj8rh38YkBYnQjMafDIEI1_V62TB3FW_nTtGa1GTev2SVXm-jILrv6QClzZDAL5DgzkJgPDRGm08OUL_Gz_7AwRrI7d5OjdbnlJO9-iHll0t5KAgy89v-9YezJeoIQ_btR6NFl1AoIl2mPKXvRlVNahE9x9yF3D0OGbojuanbXDoSlTq6C5Qt6wk6G-GUnPgUCiRaQ6QAWvH2wivF_WKEXA8kCiMUOzeR-GTzu_s-oLlYo1eLhiaB7z7ffWZ3XTxO6ZpI1Snl1VyNnu37m1zfRhiGAjNHSIEvjEwTxVDkJcj94MaBSswjtKLk3FflZgEbI",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Accept",
+						"type": "text",
+						"value": "application/json"
+					},
+					{
+						"key": "Authorization",
+						"type": "text",
+						"value": "'Bearer '.$accessToken,",
+						"disabled": true
+					}
+				],
+				"url": {
+					"raw": "http://127.0.0.1:9102/api/users/2",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "9102",
+					"path": [
+						"api",
+						"users",
+						"2"
+					]
+				},
+				"description": "Delete User"
+			},
+			"response": []
+		},
+		{
+			"name": "DeleteTask",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiZTRjMjE4OTc5MjZhNzAzZmNkZjhiMjllNGJmYjBjZDA1YmFmM2IxODVlMTA3NTliNjU3YjBlYzZlNzFjMjU1NDUzNTEyYjBjYTVjMDUzNTAiLCJpYXQiOjE1OTIzMjgxNjMsIm5iZiI6MTU5MjMyODE2MywiZXhwIjoxNjIzODY0MTYzLCJzdWIiOiIxNiIsInNjb3BlcyI6W119.g0IomBBrZR2tAA5J_mcC0efMk9K_OB6iRQi_HOLnK1ffHLC4cjVVGbqMjBxdoZnSZKAjAovS0-4cez71CBZKDc7XSehYcRkixfkrgzn4JoiixGog8ELZ7TVk7Gcl0mk4AjXrCqpwaerCUr07cQ7NlTbcZ6hGWAyryVrz1REgiqw0mEqDzi7eR6bXTpTe7257N7RuAxNQiZAvK4NZi8s3mz2ETLFeL0pTsckYOO48azmlLSnMOfu0Ue6AiT25zCSCmQAEau0cCyML-Gj5fdZ8hEMyuKx0VcH_hXCOl9Vh-zf1aIGPDHyopzS7zcd1t1XC69be6RqtyDDfTl1cGtuJu-LhS37t8IGdMQRBxLOxLKwBdRe65c-VtpW-9cfVWwge3Nz6Ua2L9RfeyYF3_H6xzN6DR47EpvEjlmaMG6TSPqBYmHvReXheZwGS7Mi6VDFkwI-488nTm2N4lz8dKPFga_-7MdbmBoxz85kKgqhGT_pKXoyGfeQGgIKiTZBR_AXqxKtS5C4rhC_Py1_DRD4QcaaIXuu-VFEVR5n7Og9MPq8y96mwvOtjP472IeBvQqZTyL9r1ICfTfE0Ic4AciEl5y10-doeRRpcpCrl0lDvmcqGOD04mbe3Ktju_8iyPd4gIhF-YXkNE-hGK8XjeTMCx3s58BlipIIpLeFem8dx9NY",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Accept",
+						"type": "text",
+						"value": "application/json"
+					},
+					{
+						"key": "Authorization",
+						"type": "text",
+						"value": "'Bearer '.$accessToken,",
+						"disabled": true
+					}
+				],
+				"url": {
+					"raw": "http://127.0.0.1:9102/api/tasks/2",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "9102",
+					"path": [
+						"api",
+						"tasks",
+						"2"
+					]
+				},
+				"description": "Delete User"
+			},
+			"response": []
+		},
+		{
+			"name": "GetUserList Paginate 1 page",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiZTZmZmZhMmY0NjVkZmFjYjI1YjZmMDVhYWQ4OGMyYWQzYmI4MDMxM2I5NGJiNWI2NzQ0Y2UwMDgxNjI4YWJhYjFkYWUzNDkwMjEwY2QwMzQiLCJpYXQiOjE1OTIzMTgxMTgsIm5iZiI6MTU5MjMxODExOCwiZXhwIjoxNjIzODU0MTE4LCJzdWIiOiIxOCIsInNjb3BlcyI6W119.xOwjBWwcrDmRy7P4wcYS2LRJCRMXZZrWhw-79qfIlNHKBF9bYrO7jDcw2suXYNt8k85QQ_ypuKanPWTlpW4WHkaX3t7bHkCzarNg88n5oqUprgVxjnFQAnyPjwc173O-pk7qXzUwc7E0H7ngN-PpQl4WJhEmy0_L6Y4Jc6TFffsfgggMAYPAVWS9N2tXyfykwNXdKVwM0xa7ix80a0DIOWfgIQF5o_1qE5JnytvmcknOESEDQgXfkoMRzHjgC7d5YHkrpCtXnBIUsvbQhCmhdFAeE47OAKKScH_o_ohwovTXZfO5uC--myVd_WknW2UsDpRzLoLh-cpr9ws-_Yq1EfZYPbhVjPjLpm9Ek3wZqPj8rh38YkBYnQjMafDIEI1_V62TB3FW_nTtGa1GTev2SVXm-jILrv6QClzZDAL5DgzkJgPDRGm08OUL_Gz_7AwRrI7d5OjdbnlJO9-iHll0t5KAgy89v-9YezJeoIQ_btR6NFl1AoIl2mPKXvRlVNahE9x9yF3D0OGbojuanbXDoSlTq6C5Qt6wk6G-GUnPgUCiRaQ6QAWvH2wivF_WKEXA8kCiMUOzeR-GTzu_s-oLlYo1eLhiaB7z7ffWZ3XTxO6ZpI1Snl1VyNnu37m1zfRhiGAjNHSIEvjEwTxVDkJcj94MaBSswjtKLk3FflZgEbI",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"type": "text",
+						"value": "application/json"
+					},
+					{
+						"key": "Authorization",
+						"type": "text",
+						"value": "'Bearer '.$accessToken,",
+						"disabled": true
+					}
+				],
+				"url": {
+					"raw": "http://127.0.0.1:9102/api/users/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "9102",
+					"path": [
+						"api",
+						"users",
+						""
+					]
+				},
+				"description": "User list"
+			},
+			"response": []
+		},
+		{
+			"name": "Paginate 2 page",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiZTZmZmZhMmY0NjVkZmFjYjI1YjZmMDVhYWQ4OGMyYWQzYmI4MDMxM2I5NGJiNWI2NzQ0Y2UwMDgxNjI4YWJhYjFkYWUzNDkwMjEwY2QwMzQiLCJpYXQiOjE1OTIzMTgxMTgsIm5iZiI6MTU5MjMxODExOCwiZXhwIjoxNjIzODU0MTE4LCJzdWIiOiIxOCIsInNjb3BlcyI6W119.xOwjBWwcrDmRy7P4wcYS2LRJCRMXZZrWhw-79qfIlNHKBF9bYrO7jDcw2suXYNt8k85QQ_ypuKanPWTlpW4WHkaX3t7bHkCzarNg88n5oqUprgVxjnFQAnyPjwc173O-pk7qXzUwc7E0H7ngN-PpQl4WJhEmy0_L6Y4Jc6TFffsfgggMAYPAVWS9N2tXyfykwNXdKVwM0xa7ix80a0DIOWfgIQF5o_1qE5JnytvmcknOESEDQgXfkoMRzHjgC7d5YHkrpCtXnBIUsvbQhCmhdFAeE47OAKKScH_o_ohwovTXZfO5uC--myVd_WknW2UsDpRzLoLh-cpr9ws-_Yq1EfZYPbhVjPjLpm9Ek3wZqPj8rh38YkBYnQjMafDIEI1_V62TB3FW_nTtGa1GTev2SVXm-jILrv6QClzZDAL5DgzkJgPDRGm08OUL_Gz_7AwRrI7d5OjdbnlJO9-iHll0t5KAgy89v-9YezJeoIQ_btR6NFl1AoIl2mPKXvRlVNahE9x9yF3D0OGbojuanbXDoSlTq6C5Qt6wk6G-GUnPgUCiRaQ6QAWvH2wivF_WKEXA8kCiMUOzeR-GTzu_s-oLlYo1eLhiaB7z7ffWZ3XTxO6ZpI1Snl1VyNnu37m1zfRhiGAjNHSIEvjEwTxVDkJcj94MaBSswjtKLk3FflZgEbI",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://127.0.0.1:9102/api/users?page=2",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "9102",
+					"path": [
+						"api",
+						"users"
+					],
+					"query": [
+						{
+							"key": "page",
+							"value": "2"
+						}
+					]
+				},
+				"description": "Papinate 2 page"
+			},
+			"response": []
+		},
+		{
+			"name": "GetTaskList",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiZTRjMjE4OTc5MjZhNzAzZmNkZjhiMjllNGJmYjBjZDA1YmFmM2IxODVlMTA3NTliNjU3YjBlYzZlNzFjMjU1NDUzNTEyYjBjYTVjMDUzNTAiLCJpYXQiOjE1OTIzMjgxNjMsIm5iZiI6MTU5MjMyODE2MywiZXhwIjoxNjIzODY0MTYzLCJzdWIiOiIxNiIsInNjb3BlcyI6W119.g0IomBBrZR2tAA5J_mcC0efMk9K_OB6iRQi_HOLnK1ffHLC4cjVVGbqMjBxdoZnSZKAjAovS0-4cez71CBZKDc7XSehYcRkixfkrgzn4JoiixGog8ELZ7TVk7Gcl0mk4AjXrCqpwaerCUr07cQ7NlTbcZ6hGWAyryVrz1REgiqw0mEqDzi7eR6bXTpTe7257N7RuAxNQiZAvK4NZi8s3mz2ETLFeL0pTsckYOO48azmlLSnMOfu0Ue6AiT25zCSCmQAEau0cCyML-Gj5fdZ8hEMyuKx0VcH_hXCOl9Vh-zf1aIGPDHyopzS7zcd1t1XC69be6RqtyDDfTl1cGtuJu-LhS37t8IGdMQRBxLOxLKwBdRe65c-VtpW-9cfVWwge3Nz6Ua2L9RfeyYF3_H6xzN6DR47EpvEjlmaMG6TSPqBYmHvReXheZwGS7Mi6VDFkwI-488nTm2N4lz8dKPFga_-7MdbmBoxz85kKgqhGT_pKXoyGfeQGgIKiTZBR_AXqxKtS5C4rhC_Py1_DRD4QcaaIXuu-VFEVR5n7Og9MPq8y96mwvOtjP472IeBvQqZTyL9r1ICfTfE0Ic4AciEl5y10-doeRRpcpCrl0lDvmcqGOD04mbe3Ktju_8iyPd4gIhF-YXkNE-hGK8XjeTMCx3s58BlipIIpLeFem8dx9NY",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"url": {
+					"raw": "http://127.0.0.1:9102/api/tasks",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "9102",
+					"path": [
+						"api",
+						"tasks"
+					]
+				},
+				"description": "Papinate 2 page"
+			},
+			"response": []
+		},
+		{
+			"name": "Status Change Request",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiZTRjMjE4OTc5MjZhNzAzZmNkZjhiMjllNGJmYjBjZDA1YmFmM2IxODVlMTA3NTliNjU3YjBlYzZlNzFjMjU1NDUzNTEyYjBjYTVjMDUzNTAiLCJpYXQiOjE1OTIzMjgxNjMsIm5iZiI6MTU5MjMyODE2MywiZXhwIjoxNjIzODY0MTYzLCJzdWIiOiIxNiIsInNjb3BlcyI6W119.g0IomBBrZR2tAA5J_mcC0efMk9K_OB6iRQi_HOLnK1ffHLC4cjVVGbqMjBxdoZnSZKAjAovS0-4cez71CBZKDc7XSehYcRkixfkrgzn4JoiixGog8ELZ7TVk7Gcl0mk4AjXrCqpwaerCUr07cQ7NlTbcZ6hGWAyryVrz1REgiqw0mEqDzi7eR6bXTpTe7257N7RuAxNQiZAvK4NZi8s3mz2ETLFeL0pTsckYOO48azmlLSnMOfu0Ue6AiT25zCSCmQAEau0cCyML-Gj5fdZ8hEMyuKx0VcH_hXCOl9Vh-zf1aIGPDHyopzS7zcd1t1XC69be6RqtyDDfTl1cGtuJu-LhS37t8IGdMQRBxLOxLKwBdRe65c-VtpW-9cfVWwge3Nz6Ua2L9RfeyYF3_H6xzN6DR47EpvEjlmaMG6TSPqBYmHvReXheZwGS7Mi6VDFkwI-488nTm2N4lz8dKPFga_-7MdbmBoxz85kKgqhGT_pKXoyGfeQGgIKiTZBR_AXqxKtS5C4rhC_Py1_DRD4QcaaIXuu-VFEVR5n7Og9MPq8y96mwvOtjP472IeBvQqZTyL9r1ICfTfE0Ic4AciEl5y10-doeRRpcpCrl0lDvmcqGOD04mbe3Ktju_8iyPd4gIhF-YXkNE-hGK8XjeTMCx3s58BlipIIpLeFem8dx9NY",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Accept",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"status_id\": \"2\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:9102/api/tasks/1/status/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "9102",
+					"path": [
+						"api",
+						"tasks",
+						"1",
+						"status",
+						""
+					]
+				},
+				"description": "Papinate 2 page"
+			},
+			"response": []
+		},
+		{
+			"name": "Create task",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiZTRjMjE4OTc5MjZhNzAzZmNkZjhiMjllNGJmYjBjZDA1YmFmM2IxODVlMTA3NTliNjU3YjBlYzZlNzFjMjU1NDUzNTEyYjBjYTVjMDUzNTAiLCJpYXQiOjE1OTIzMjgxNjMsIm5iZiI6MTU5MjMyODE2MywiZXhwIjoxNjIzODY0MTYzLCJzdWIiOiIxNiIsInNjb3BlcyI6W119.g0IomBBrZR2tAA5J_mcC0efMk9K_OB6iRQi_HOLnK1ffHLC4cjVVGbqMjBxdoZnSZKAjAovS0-4cez71CBZKDc7XSehYcRkixfkrgzn4JoiixGog8ELZ7TVk7Gcl0mk4AjXrCqpwaerCUr07cQ7NlTbcZ6hGWAyryVrz1REgiqw0mEqDzi7eR6bXTpTe7257N7RuAxNQiZAvK4NZi8s3mz2ETLFeL0pTsckYOO48azmlLSnMOfu0Ue6AiT25zCSCmQAEau0cCyML-Gj5fdZ8hEMyuKx0VcH_hXCOl9Vh-zf1aIGPDHyopzS7zcd1t1XC69be6RqtyDDfTl1cGtuJu-LhS37t8IGdMQRBxLOxLKwBdRe65c-VtpW-9cfVWwge3Nz6Ua2L9RfeyYF3_H6xzN6DR47EpvEjlmaMG6TSPqBYmHvReXheZwGS7Mi6VDFkwI-488nTm2N4lz8dKPFga_-7MdbmBoxz85kKgqhGT_pKXoyGfeQGgIKiTZBR_AXqxKtS5C4rhC_Py1_DRD4QcaaIXuu-VFEVR5n7Og9MPq8y96mwvOtjP472IeBvQqZTyL9r1ICfTfE0Ic4AciEl5y10-doeRRpcpCrl0lDvmcqGOD04mbe3Ktju_8iyPd4gIhF-YXkNE-hGK8XjeTMCx3s58BlipIIpLeFem8dx9NY",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"title\": \"sadeawsdasdasdas\",\n  \"description\": \"dsadasdasdasdasdas\",\n  \"status_id\": \"1\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:9102/api/tasks",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "9102",
+					"path": [
+						"api",
+						"tasks"
+					]
+				},
+				"description": "Papinate 2 page"
 			},
 			"response": []
 		}
