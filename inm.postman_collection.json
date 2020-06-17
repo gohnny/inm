@@ -516,6 +516,100 @@
 			"response": []
 		},
 		{
+			"name": "FilterTaskList",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiZTRjMjE4OTc5MjZhNzAzZmNkZjhiMjllNGJmYjBjZDA1YmFmM2IxODVlMTA3NTliNjU3YjBlYzZlNzFjMjU1NDUzNTEyYjBjYTVjMDUzNTAiLCJpYXQiOjE1OTIzMjgxNjMsIm5iZiI6MTU5MjMyODE2MywiZXhwIjoxNjIzODY0MTYzLCJzdWIiOiIxNiIsInNjb3BlcyI6W119.g0IomBBrZR2tAA5J_mcC0efMk9K_OB6iRQi_HOLnK1ffHLC4cjVVGbqMjBxdoZnSZKAjAovS0-4cez71CBZKDc7XSehYcRkixfkrgzn4JoiixGog8ELZ7TVk7Gcl0mk4AjXrCqpwaerCUr07cQ7NlTbcZ6hGWAyryVrz1REgiqw0mEqDzi7eR6bXTpTe7257N7RuAxNQiZAvK4NZi8s3mz2ETLFeL0pTsckYOO48azmlLSnMOfu0Ue6AiT25zCSCmQAEau0cCyML-Gj5fdZ8hEMyuKx0VcH_hXCOl9Vh-zf1aIGPDHyopzS7zcd1t1XC69be6RqtyDDfTl1cGtuJu-LhS37t8IGdMQRBxLOxLKwBdRe65c-VtpW-9cfVWwge3Nz6Ua2L9RfeyYF3_H6xzN6DR47EpvEjlmaMG6TSPqBYmHvReXheZwGS7Mi6VDFkwI-488nTm2N4lz8dKPFga_-7MdbmBoxz85kKgqhGT_pKXoyGfeQGgIKiTZBR_AXqxKtS5C4rhC_Py1_DRD4QcaaIXuu-VFEVR5n7Og9MPq8y96mwvOtjP472IeBvQqZTyL9r1ICfTfE0Ic4AciEl5y10-doeRRpcpCrl0lDvmcqGOD04mbe3Ktju_8iyPd4gIhF-YXkNE-hGK8XjeTMCx3s58BlipIIpLeFem8dx9NY",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"url": {
+					"raw": "http://127.0.0.1:9102/api/tasks/filter?status_id=1",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "9102",
+					"path": [
+						"api",
+						"tasks",
+						"filter"
+					],
+					"query": [
+						{
+							"key": "status_id",
+							"value": "1"
+						}
+					]
+				},
+				"description": "Фильтрация задач по статусу."
+			},
+			"response": []
+		},
+		{
+			"name": "OrderTaskList",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiZTRjMjE4OTc5MjZhNzAzZmNkZjhiMjllNGJmYjBjZDA1YmFmM2IxODVlMTA3NTliNjU3YjBlYzZlNzFjMjU1NDUzNTEyYjBjYTVjMDUzNTAiLCJpYXQiOjE1OTIzMjgxNjMsIm5iZiI6MTU5MjMyODE2MywiZXhwIjoxNjIzODY0MTYzLCJzdWIiOiIxNiIsInNjb3BlcyI6W119.g0IomBBrZR2tAA5J_mcC0efMk9K_OB6iRQi_HOLnK1ffHLC4cjVVGbqMjBxdoZnSZKAjAovS0-4cez71CBZKDc7XSehYcRkixfkrgzn4JoiixGog8ELZ7TVk7Gcl0mk4AjXrCqpwaerCUr07cQ7NlTbcZ6hGWAyryVrz1REgiqw0mEqDzi7eR6bXTpTe7257N7RuAxNQiZAvK4NZi8s3mz2ETLFeL0pTsckYOO48azmlLSnMOfu0Ue6AiT25zCSCmQAEau0cCyML-Gj5fdZ8hEMyuKx0VcH_hXCOl9Vh-zf1aIGPDHyopzS7zcd1t1XC69be6RqtyDDfTl1cGtuJu-LhS37t8IGdMQRBxLOxLKwBdRe65c-VtpW-9cfVWwge3Nz6Ua2L9RfeyYF3_H6xzN6DR47EpvEjlmaMG6TSPqBYmHvReXheZwGS7Mi6VDFkwI-488nTm2N4lz8dKPFga_-7MdbmBoxz85kKgqhGT_pKXoyGfeQGgIKiTZBR_AXqxKtS5C4rhC_Py1_DRD4QcaaIXuu-VFEVR5n7Og9MPq8y96mwvOtjP472IeBvQqZTyL9r1ICfTfE0Ic4AciEl5y10-doeRRpcpCrl0lDvmcqGOD04mbe3Ktju_8iyPd4gIhF-YXkNE-hGK8XjeTMCx3s58BlipIIpLeFem8dx9NY",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"url": {
+					"raw": "http://127.0.0.1:9102/api/tasks/order?order=desc",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "9102",
+					"path": [
+						"api",
+						"tasks",
+						"order"
+					],
+					"query": [
+						{
+							"key": "order",
+							"value": "desc"
+						}
+					]
+				},
+				"description": "Фильтрация задач по статусу."
+			},
+			"response": []
+		},
+		{
 			"name": "Status Change Request",
 			"request": {
 				"auth": {
@@ -561,6 +655,57 @@
 						"1",
 						"status",
 						""
+					]
+				},
+				"description": "Papinate 2 page"
+			},
+			"response": []
+		},
+		{
+			"name": "AssignUserChange Request",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiZTRjMjE4OTc5MjZhNzAzZmNkZjhiMjllNGJmYjBjZDA1YmFmM2IxODVlMTA3NTliNjU3YjBlYzZlNzFjMjU1NDUzNTEyYjBjYTVjMDUzNTAiLCJpYXQiOjE1OTIzMjgxNjMsIm5iZiI6MTU5MjMyODE2MywiZXhwIjoxNjIzODY0MTYzLCJzdWIiOiIxNiIsInNjb3BlcyI6W119.g0IomBBrZR2tAA5J_mcC0efMk9K_OB6iRQi_HOLnK1ffHLC4cjVVGbqMjBxdoZnSZKAjAovS0-4cez71CBZKDc7XSehYcRkixfkrgzn4JoiixGog8ELZ7TVk7Gcl0mk4AjXrCqpwaerCUr07cQ7NlTbcZ6hGWAyryVrz1REgiqw0mEqDzi7eR6bXTpTe7257N7RuAxNQiZAvK4NZi8s3mz2ETLFeL0pTsckYOO48azmlLSnMOfu0Ue6AiT25zCSCmQAEau0cCyML-Gj5fdZ8hEMyuKx0VcH_hXCOl9Vh-zf1aIGPDHyopzS7zcd1t1XC69be6RqtyDDfTl1cGtuJu-LhS37t8IGdMQRBxLOxLKwBdRe65c-VtpW-9cfVWwge3Nz6Ua2L9RfeyYF3_H6xzN6DR47EpvEjlmaMG6TSPqBYmHvReXheZwGS7Mi6VDFkwI-488nTm2N4lz8dKPFga_-7MdbmBoxz85kKgqhGT_pKXoyGfeQGgIKiTZBR_AXqxKtS5C4rhC_Py1_DRD4QcaaIXuu-VFEVR5n7Og9MPq8y96mwvOtjP472IeBvQqZTyL9r1ICfTfE0Ic4AciEl5y10-doeRRpcpCrl0lDvmcqGOD04mbe3Ktju_8iyPd4gIhF-YXkNE-hGK8XjeTMCx3s58BlipIIpLeFem8dx9NY",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Accept",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"assign_user_id\": \"6\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:9102/api/tasks/1/assign_user",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "9102",
+					"path": [
+						"api",
+						"tasks",
+						"1",
+						"assign_user"
 					]
 				},
 				"description": "Papinate 2 page"
